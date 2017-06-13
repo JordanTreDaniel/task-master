@@ -1,0 +1,12 @@
+
+@import '~@angular/material/theming';
+@import './palettes.scss';
+@include mat-core();
+
+$civility-app-primary: mat-palette($md-civility-primary);
+$civility-app-accent:  mat-palette($md-civility-accent);
+$civility-app-warn:    mat-palette($md-civility-warn);
+
+$civility-app-theme:   mat-light-theme($civility-app-primary, $civility-app-accent, $civility-app-warn);
+
+@include angular-material-theme($civility-app-theme);

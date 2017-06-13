@@ -1,0 +1,16 @@
+{
+    "apps": [
+        {
+            "name": "Civility International Organization",
+            "cwd": "/var/www/ng2.cooldomain.com",
+            "args": "-p 8080 -d false",
+            "script": "/root/.nvm/v4.2.6/bin/http-server"
+        },
+        {
+            "name": "api",
+            "cwd": "/var/www/api.cooldomain.com",
+            "script": "app.js",
+            "watch": true
+        }
+    ]
+}
