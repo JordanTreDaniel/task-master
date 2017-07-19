@@ -11,12 +11,17 @@ export class TaskShellComponent implements OnInit {
   
   tasks: Task[];
   selectedTask: Task;
+  newTaskRequested: Boolean;
   ngOnInit() {
     this.tasks = tasksArr;
     this.selectedTask = this.tasks[0];
   }
   selectTask(task): void {
     this.selectedTask = task;
+  }
+  
+  requestNewTask():void {
+    this.newTaskRequested = true;
   }
 
 }
