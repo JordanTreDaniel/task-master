@@ -1,0 +1,26 @@
+<form [formGroup]="taskForm" novalidate>
+  <md-input-container>
+    <input type="text" mdInput placeholder="Title" formControlName="title">
+  </md-input-container>
+  <md-input-container>
+    <input type="text" mdInput placeholder="Description" formControlName="description">
+  </md-input-container>
+  <md-input-container>
+    <input type="number" mdInput formControlName="importance">
+  </md-input-container>
+  <div formArrayName="notes">
+    <div *ngFor="let note of notes.controls; let i = index" [formGroupName]="i">
+      <md-input-container>
+        <input type="text" mdInput placeholder="Reason" formControlName="reason">
+      </md-input-container>
+      <md-input-container> 
+        <input type="text" mdInput placeholder="Thoughts" formControlName="thoughts">
+      </md-input-container>
+      <button type="button" (click)="deleteNote(i)">Remove Note</button>
+    </div>
+    <button type="button" (click)="addNote()">Add A Note</button>
+  </div>
+</form>
+
+<p>Form value: {{ taskForm.value | json }}</p>
+<p>Form status: {{ taskForm.status | json }}</p>

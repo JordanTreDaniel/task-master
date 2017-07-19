@@ -1,0 +1,16 @@
+
+<app-task-form [task]='selectedTask'></app-task-form>
+<md-grid-list cols="10" rowHeight="100px">
+  <md-grid-tile 
+    *ngFor="let task of tasks"
+    [colspan]="task.importance"
+    [rowspan]="1"
+    (click)="selectTask(task)"
+    >
+    <md-card>
+      <md-card-title>{{task.title}}</md-card-title>
+      <md-card-subtitle>{{task.description}}</md-card-subtitle>
+      <md-card-content>{{task.importance}}</md-card-content>
+    </md-card>
+  </md-grid-tile>
+</md-grid-list>
